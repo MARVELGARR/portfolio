@@ -1,0 +1,34 @@
+
+import {BsGithub} from 'react-icons/bs'
+import {AiOutlineLinkedin, AiOutlineFacebook} from 'react-icons/ai'
+import {CiTwitter} from 'react-icons/ci'
+import {SiHashnode, SiFrontendmentor} from 'react-icons/si'
+import Link from 'next/link'
+
+const ProfileMenuItems: React.FC = () =>{
+
+    const profileItems = [
+        { name: 'github', icon: <BsGithub/>, link: 'https://github.com/MARVELGARR', },
+        { name: 'linkedIn', icon: <AiOutlineLinkedin/>, link: 'https://www.linkedin.com/in/marvellous-obatale-960088267/', },
+        { name: 'twitter', icon: <CiTwitter/>, link: 'https://twitter.com/MARVEL_GARRA', },
+        { name: 'facebook', icon: <AiOutlineFacebook/>, link: 'https://www.facebook.com/marvel.garra/', },
+        { name: 'Hashnode', icon: <SiHashnode/>, link: 'https://hashnode.com/@MarvelGarra', },
+        { name: 'frontend mentor', icon: <SiFrontendmentor/>, link: 'https://www.frontendmentor.io/profile/MARVELGARR', },
+    ]
+
+    return(
+        <ul className=''>
+            {profileItems.map((items, index)=>{
+                return(
+                    <li key={index} className="">
+                        <Link className='flexgap-5' href={items.link}>                         
+                            <div className="">{items.icon}</div>
+                            <div className="">{items.name}</div>                         
+                        </Link>
+                    </li>
+                )
+            })}
+        </ul>
+    )
+}
+export default ProfileMenuItems
