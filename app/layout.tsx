@@ -22,7 +22,7 @@ export default function RootLayout({
   return (
     <html lang='eng'>
 
-      <body className={`${inter.className} lg:px-24  bg-slate-300 `}>
+      <body className={`${inter.className} lg:px-24 flex justify-center items-center h-screen bg-slate-300 `}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
@@ -32,7 +32,7 @@ export default function RootLayout({
             <div className='flex '>
 
               <DesktopSideBar/>
-              <main className=" w-full bg-white text-cyan-950">{children}</main>
+              <main className=" xl:min-w-[1000px] bg-white text-cyan-950">{children}</main>
             </div>
             <div className='w-full bg-red-400 h-10 fixed bottom-0 sm:hidden'> sasasa</div>
         </ThemeProvider>

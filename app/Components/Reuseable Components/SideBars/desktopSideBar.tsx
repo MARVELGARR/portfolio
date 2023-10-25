@@ -28,7 +28,9 @@ import {
     DropdownMenuSeparator,
     DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
-  
+import ProfileMenuItems from "../../profile menu/profileMenuItems";
+import useActive from "@/app/Hooks/useActive";
+
   
   
 
@@ -43,6 +45,7 @@ const sidebarItems = [
 
 const DesktopSideBar: React.FC = () => {
 
+    const { value, handleChange } =  useActive(0)
 
   return (
     <aside className=" bg-white h-full dark:text-white dark:bg-cyan-950  shadow-md hidden sm:flex items-center sm:flex-col gap-5 rounded-l-2xl px-3 py-5 lg:min-w-[300px] left-0 flex-grow flex-shrink">
@@ -72,28 +75,33 @@ const DesktopSideBar: React.FC = () => {
                 </HoverCard>
             </div>
         </div>
-        <div className="w-full flex justify-start"><ModeToggle /></div>
+        <div className="w-full flex items-center md:justify-start"><ModeToggle /></div>
         <div className="sm:flex sm:flex-col w-full sm:gap-3">
             {sidebarItems.map((item, index) => (
-                <Link href={item.link}
+                <Link className={``} href={item.link}
                     key={index}
                 >
                     <Button
-
-                    
-                        className={` bg-white dark:text-white dark:bg-cyan-950 dark:hover:text-cyan-950 dark:hover:bg-white hover:text-white hover:bg-black text-md text-black w-full h-14`}
+                        onClick={()=>handleChange(index)}
+                        className={` ${ value == index ? " " : ''} bg-white dark:text-white dark:bg-cyan-950 dark:hover:text-cyan-950 dark:hover:bg-white hover:text-white hover:bg-black text-md text-black w-full h-14`}
+                        
                     >
-                        <BarItems>
-                        {item.icon}
-                        <h3 className="hidden md:flex">{item.text}</h3>
+                        <BarItems className=''>
+                            {item.icon}
+                            <h3 className="hidden md:flex">{item.text}</h3>
                         </BarItems>
                     </Button>
                 </Link>
             ))}
         </div>
-        <div className="">
-            <DropdownMenu>
-                <ProfileMenu/>
+        <div className=" ">
+            <DropdownMenu >
+                <DropdownMenuTrigger><ProfileMenu/></DropdownMenuTrigger>
+                <DropdownMenuContent className=' p-2 '>
+                    <DropdownMenuLabel className=' hidden md:flex'>My socials </DropdownMenuLabel>
+                    <DropdownMenuSeparator />
+                    <DropdownMenuItem className="w-full border-2 border-cyan-950 dark:border-2 dark:border-cyan-100"><ProfileMenuItems/></DropdownMenuItem>
+                </DropdownMenuContent>
             </DropdownMenu>
         </div>
     </aside>

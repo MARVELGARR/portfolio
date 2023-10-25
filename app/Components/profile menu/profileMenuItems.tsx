@@ -17,13 +17,13 @@ const ProfileMenuItems: React.FC = () =>{
     ]
 
     return(
-        <ul className=''>
+        <ul className='md:flex flex-col w-fit flex gap-4 dark:bg-cyan-950 dark:text-white'>
             {profileItems.map((items, index)=>{
                 return(
-                    <li key={index} className="">
-                        <Link className='flexgap-5' href={items.link}>                         
+                    <li key={index} className="flex  flex-col gap-3">
+                        <Link className='flex gap-5 items-center' target='_blank' href={items.link}>                         
                             <div className="">{items.icon}</div>
-                            <div className="">{items.name}</div>                         
+                            <div className="hidden md:flex ">{items.name}</div>                         
                         </Link>
                     </li>
                 )

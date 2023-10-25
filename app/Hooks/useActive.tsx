@@ -14,6 +14,7 @@ const useActive = ( initialState: number ) : useActiveProps =>{
 
     const handleChange = (value: number) =>{
         setValue(value)
+        console.log(value)
     }
     return { value, handleChange}
 }
