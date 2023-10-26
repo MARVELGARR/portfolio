@@ -1,10 +1,11 @@
+import HomeWrapper from "../Components/jsx components/homepage components/homeWrapper"
 
 
 const Home : React.FC = () =>{
   return (
-    <div className=" text-skin-base">
-      txxexexedcdc
-    </div>
+    <HomeWrapper>
+      <div className="">i love food</div>
+    </HomeWrapper>
   )
 }
 

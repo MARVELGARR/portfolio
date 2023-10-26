@@ -3,6 +3,7 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import DesktopSideBar from './Components/Reuseable Components/SideBars/desktopSideBar'
 import { ThemeProvider } from './Components/theme-provider'
+import MobileBar from './Components/Reuseable Components/SideBars/mobileBar'
 
 
 
@@ -34,7 +35,7 @@ export default function RootLayout({
               <DesktopSideBar/>
               <main className=" xl:min-w-[1000px] bg-white text-cyan-950">{children}</main>
             </div>
-            <div className='w-full bg-red-400 h-10 fixed bottom-0 sm:hidden'> sasasa</div>
+            <div className='w-full dark:bg-cyan-950 bg-white h-16 justify-center items-center fixed bottom-0 sm:hidden'><MobileBar/></div>
         </ThemeProvider>
       </body>
     </html>

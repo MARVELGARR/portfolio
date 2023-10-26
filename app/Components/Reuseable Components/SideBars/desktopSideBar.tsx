@@ -34,8 +34,8 @@ import useActive from "@/app/Hooks/useActive";
   
   
 
-const sidebarItems = [
-  { icon: <BiHomeAlt2 />, text: "Dashboard", link: '/' },
+export const sidebarItems = [
+  { icon: <BiHomeAlt2 />, text: "Home", link: '/' },
   { icon: <AiOutlineUser />, text: "Profile", link: '/about' },
   { icon: <LiaToolsSolid />, text: "Skills", link: '/skills' },
   { icon: <HiOutlineDocumentDuplicate  />, text: "Resume", link: '/resume' },
