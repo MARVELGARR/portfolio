@@ -48,7 +48,7 @@ const DesktopSideBar: React.FC = () => {
     const { value, handleChange } =  useActive(0)
 
   return (
-    <aside className=" bg-white h-full dark:text-white dark:bg-cyan-950  shadow-md hidden sm:flex items-center sm:flex-col gap-5 rounded-l-2xl px-3 py-5 lg:min-w-[300px] left-0 flex-grow flex-shrink">
+    <aside className=" bg-white h-full max-w-fit dark:text-white dark:bg-cyan-950  shadow-md hidden sm:flex items-center sm:flex-col gap-5 rounded-l-2xl px-3 py-5  left-0 ">
         <div className="w-full">
             <div className=" cursor-pointer">
                 <HoverCard>

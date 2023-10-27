@@ -4,7 +4,7 @@ const Resume : React.FC = () =>{
     return (
         <>
             <title>Resume</title>
-            <div className=" text-skin-base">
+            <div className=" w-full h-full">
                 RESUME
             </div>
         </>

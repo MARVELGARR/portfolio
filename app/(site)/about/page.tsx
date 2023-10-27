@@ -4,7 +4,7 @@ const About : React.FC = () =>{
   return (
     <>
       <title>About Me</title>
-      <div className=" text-skin-base">
+      <div className=" w-full h-full">
         ABOUT
       </div>
     </>

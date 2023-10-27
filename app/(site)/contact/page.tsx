@@ -7,8 +7,8 @@ const Contact : React.FC = () =>{
   
         <>
             <title>Contact me</title>
-            <div className=" text-skin-base">
-                Contact me
+            <div className="w-full h-full flex flex-wrap">
+              
             </div>
         </>
 
