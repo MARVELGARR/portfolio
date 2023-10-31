@@ -20,7 +20,7 @@ const UserImage: React.FC<UserImageProps> = ({ image, alt}) =>{
                 alt={alt}
                 width={220}
                 height={120}
-                className="w-30 bg-black rotate-3 h-30 object-cover rounded-t-[6rem] rounded-bl-[8rem] rounded-br-[8rem] transform skew-x-11"
+                className=" max-w-[5rem] lg:min-w-[10rem] bg-black rotate-3 h-30 object-cover rounded-t-[6rem] rounded-bl-[8rem] rounded-br-[8rem] transform skew-x-11"
             />
         </div>
     )

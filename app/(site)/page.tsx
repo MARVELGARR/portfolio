@@ -1,7 +1,7 @@
 'use client'
+import Intro from "@/app/Components/jsx components/homepage components/intro";
+import UserImage from "@/app/Components/jsx components/homepage components/userImage";
 import { easeOut, motion } from "framer-motion";
-import Intro from "../Components/jsx components/homepage components/intro";
-import UserImage from "../Components/jsx components/homepage components/userImage";
 
 const introduction ={
   greeting: `Hello, I'm Marvellous`,
@@ -38,9 +38,9 @@ const Home: React.FC = () => {
   }
 
   return (
-    <div className=" w-full h-full object-cover object-center bg-[url(/images/3252880.jpg)] dark:bg-[url(/images/59276.jpg)] ">
-      <h1 className="text-white dark:text-white text-2xl font-extrabold px-4 pt-3">Marvel<span className="text-cyan-950 dark:text-cyan-950">Garra</span></h1>
-      <div className="w-full h-full flex gap-[4rem] justify-center items-center">
+    <div className=" w-full  h-full relative px-5 object-cover object-center bg-[url(/images/3252880.jpg)] dark:bg-[url(/images/59276.jpg)] ">
+      <h1 className="text-white absolute top-3 left-4 dark:text-white text-2xl font-extrabold px-4 pt-3">Marvel<span className="text-cyan-950 dark:text-cyan-950">Garra</span></h1>
+      <div className="   w-full h-full flex-col-reverse lg:flex-row flex gap-[4rem] justify-center items-center">
         <Intro greeting={introduction.greeting} title={introduction.title} intro={introduction.intro} call={introduction.call}/>
         <motion.div
           variants={variant}
@@ -54,7 +54,6 @@ const Home: React.FC = () => {
     </div>
   );
 };
-
 
 
 export default Home

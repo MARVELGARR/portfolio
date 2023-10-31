@@ -26,19 +26,22 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.googleapis.com"/>
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap" rel="stylesheet"/>
+        <link rel="preconnect" href="https://fonts.googleapis.com"/>
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet"></link>
       </head>
-      <body className={`${inter.className} flex w-full sm:h-screen sm:flex sm:justify-center sm:items-center bg-slate-300`}>
+      <body className={`${inter.className} h-[40rem] flex w-full sm:h-screen sm:flex sm:justify-center sm:items-center bg-slate-300`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <div className=' w-full h-full sm:h-[80%] sm:w-[80%]   sm:flex'>
+          <div className=' w-full h-fit sm:h-[80%] sm:w-[80%]   sm:flex'>
             <div className="h-full">
               <DesktopSideBar />
             </div>
-            <div className="  object-cover object-top dark:text-white h-screen sm:w-[80%] sm:h-full text-cyan-950">
+            <div className=" object-cover object-top dark:text-white h-screen sm:w-[80%] sm:h-full text-cyan-950">
               {children}
             </div>
           </div>

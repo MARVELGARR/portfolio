@@ -37,7 +37,6 @@ import useActive from "@/app/Hooks/useActive";
 export const sidebarItems = [
   { icon: <BiHomeAlt2 />, text: "Home", link: '/' },
   { icon: <AiOutlineUser />, text: "Profile", link: '/about' },
-  { icon: <LiaToolsSolid />, text: "Skills", link: '/skills' },
   { icon: <HiOutlineDocumentDuplicate  />, text: "Resume", link: '/resume' },
   { icon: <AiOutlineFundProjectionScreen />, text: "Project", link:'/project' },
   { icon: <RiContactsBookLine />, text: "Contact Me", link:'/contact' },
