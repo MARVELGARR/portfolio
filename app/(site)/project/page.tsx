@@ -5,6 +5,11 @@ import Link from "next/link"
 
 const Projects : React.FC = () =>{
 
+
+    const handleClick = (id: number) =>{
+        window.location.href = `/project/${id}`
+    }
+
     return (
   
         <div className="h-full overflow-auto">
@@ -17,24 +22,23 @@ const Projects : React.FC = () =>{
                     {
                         Project.map((item)=>{
                             return(
-                                <div
-                                >
-                                    <Link
-                                        href={`/project/${item.id}`}
-                                    >
-                                        <ProjectCard
-                                            id={item.id}
-                                            site={item.LiveSite}
-                                            title={item.title}
-                                            stack={item.stack}
-                                            github={item.Github}
-                                            image={item.images}
-                                            description={item.description}
 
-                                        />
-                                    </Link>
-                                    
-                                </div>
+                                <button type="button" 
+                                    onClick={() => handleClick(item.id)}
+                                    key={item.id}
+                                >
+                                    <ProjectCard
+                                        id={item.id}
+                                        title={item.title}
+                                        stack={item.stack}    
+                                        image={item.images}
+                                        description={item.description}
+                                        github={item.Github}
+                                        site={item.LiveSite}
+                                    />
+                                </button>
+                                
+                                
                             )
                         })
                     }

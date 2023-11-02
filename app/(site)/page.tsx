@@ -11,7 +11,7 @@ const introduction ={
   With a strong foundation in web development, I'm dedicated to delivering clean, responsive, and user-friendly websites and applications that make a lasting impact. You can explore my code and projects on GitHub and connect with me on LinkedIn.
   Let's collaborate to turn your web development ideas into reality. Reach out to me if you have any questions or exciting projects in mind!
   `,
-  call: `Contact me`
+  call: `Email me`
 }
 
 const userImage = {

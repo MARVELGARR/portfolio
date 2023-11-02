@@ -11,8 +11,8 @@ interface ProjectCardProps{
     title: string,
     stack?: string[],
     skill?: string[],
-    github: string,
-    site: string,
+    github?: string,
+    site?: string,
     image: string,
     description?: string,
     feature?: string
@@ -34,12 +34,12 @@ const ProjectCard: React.FC <ProjectCardProps> = ({
             </div>
             <h3 className="text-xl font-bold mt-2">{title}</h3>    
             <div className="w-full flex gap-2 justify-end mt-3">
-                <Link href={github}>
+                <Link href={github || '_blank'}>
                     <div className="text-cyan-950 cursor-pointer">
                         <BsGithub size={24} />
                     </div>
                 </Link>
-                <Link href={site}>
+                <Link href={site || "_blank"}>
                     <div className="text-cyan-950 cursor-pointer">
                         <AiOutlineLink size={24} />
                     </div>
