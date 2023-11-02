@@ -8,9 +8,7 @@ import { ModeToggle } from "../themeToggle";
 
 import { BiHomeAlt2 } from 'react-icons/bi';
 import { AiOutlineUser, AiOutlineFundProjectionScreen } from 'react-icons/ai';
-import { LiaToolsSolid } from 'react-icons/lia';
-import { HiOutlineDocumentDuplicate } from 'react-icons/hi2';
-import { RiContactsBookLine } from 'react-icons/ri';
+
 import Link from "next/link";
 
 import {
@@ -35,10 +33,9 @@ import useActive from "@/app/Hooks/useActive";
   
 
 export const sidebarItems = [
-  { icon: <BiHomeAlt2 />, text: "Home", link: '/' },
-  { icon: <AiOutlineUser />, text: "Profile", link: '/about' },
-  { icon: <AiOutlineFundProjectionScreen />, text: "Project", link:'/project' },
-  { icon: <RiContactsBookLine />, text: "Contact Me", link:'/contact' },
+  { icon: <BiHomeAlt2 size={25} />, text: "Home", link: '/' },
+  { icon: <AiOutlineUser size={25} />, text: "Profile", link: '/about' },
+  { icon: <AiOutlineFundProjectionScreen size={25} />, text: "Project", link:'/project' },
 ];
 
 const DesktopSideBar: React.FC = () => {
@@ -74,33 +71,36 @@ const DesktopSideBar: React.FC = () => {
             </div>
         </div>
         <div className="w-full flex items-center md:justify-start"><ModeToggle /></div>
-        <div className="sm:flex sm:flex-col w-full sm:gap-3">
-            {sidebarItems.map((item, index) => (
-                <Link className={``} href={item.link}
-                    key={index}
-                >
-                    <Button
-                        onClick={()=>handleChange(index)}
-                        className={` ${ value == index ? " " : ''} bg-white dark:text-white dark:bg-cyan-950 dark:hover:text-cyan-950 dark:hover:bg-white hover:text-white hover:bg-black text-md text-black w-full h-14`}
-                        
+        <div className="flex flex-col items-center justify-between h-full">
+            <div className="sm:flex   sm:flex-col w-full gap-3">
+
+                {sidebarItems.map((item, index) => (
+                    <Link className={``} href={item.link}
+                        key={index}
                     >
-                        <BarItems className=''>
-                            {item.icon}
-                            <h3 className="hidden md:flex">{item.text}</h3>
-                        </BarItems>
-                    </Button>
-                </Link>
-            ))}
-        </div>
-        <div className=" ">
-            <DropdownMenu >
-                <DropdownMenuTrigger><ProfileMenu/></DropdownMenuTrigger>
-                <DropdownMenuContent className=' p-2 '>
-                    <DropdownMenuLabel className=' hidden md:flex'>My socials </DropdownMenuLabel>
-                    <DropdownMenuSeparator />
-                    <DropdownMenuItem className="w-full border-2 border-cyan-950 dark:border-2 dark:border-cyan-100"><ProfileMenuItems/></DropdownMenuItem>
-                </DropdownMenuContent>
-            </DropdownMenu>
+                        <Button
+                            onClick={()=>handleChange(index)}
+                            className={` ${ value == index ? " " : ''} bg-white dark:text-white dark:bg-cyan-950 dark:hover:text-cyan-950 dark:hover:bg-white hover:text-white hover:bg-black text-md text-black w-full h-14`}
+                            
+                        >
+                            <BarItems className=''>
+                                {item.icon}
+                                <h3 className="hidden md:flex">{item.text}</h3>
+                            </BarItems>
+                        </Button>
+                    </Link>
+                ))}
+            </div>
+            <div className=" ">
+                <DropdownMenu >
+                    <DropdownMenuTrigger><ProfileMenu/></DropdownMenuTrigger>
+                    <DropdownMenuContent className=' p-2 '>
+                        <DropdownMenuLabel className=' hidden md:flex'>My socials </DropdownMenuLabel>
+                        <DropdownMenuSeparator />
+                        <DropdownMenuItem className="w-full border-2 border-cyan-950 dark:border-2 dark:border-cyan-100"><ProfileMenuItems/></DropdownMenuItem>
+                    </DropdownMenuContent>
+                </DropdownMenu>
+            </div>
         </div>
     </aside>
   );
