@@ -5,7 +5,7 @@ import {AiOutlineCalendar} from 'react-icons/ai'
 
 const Education: React.FC = () =>{
     return (
-        <div className="flex h-fit flex-col gap-2 shadow-md w-fit p-2 rounded-lg bg-gray-300">
+        <div className="flex h-fit flex-col gap-2 dark:bg-cyan-950 dark:text-white shadow-md w-fit p-2 rounded-lg bg-gray-300">
             <h3 className="font-bold"> Education</h3>
             <div className="flex flex-col gap-3">
                 <div className="flex gap-2"><span className=""><IoSchoolOutline/></span> Elizade University</div>

@@ -13,7 +13,7 @@ const OthersSkills: React.FC = () =>{
     ]
 
     return (
-        <div className="flex flex-col bg-gray-200 rounded-xl h-fit  p-2 max-w-[20rem]">
+        <div className="flex flex-col bg-gray-200 rounded-xl h-fit dark:bg-cyan-950 dark:text-white shadow-md p-2 max-w-[20rem]">
             <h3 className="">All Skills</h3>
             <ul className="flex  gap-2 flex-wrap">
                 {

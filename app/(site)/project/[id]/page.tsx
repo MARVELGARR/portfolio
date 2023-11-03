@@ -49,7 +49,7 @@ const DynamicProjectPage= ( { params } : { params: { id: number}}) =>{
 
                     <div className=" flex gap-3 flex-wrap">{project?.stack.map((item, index)=>{
                         return(
-                            <div key={index} className="p-3 hover:bg-gray-400 bg-gray-300 rounded-lg text-xl font-bold">{item}</div>
+                            <div key={index} className="p-3 cursor-pointer hover:bg-gray-400 bg-gray-300 rounded-lg text-xl font-bold">{item}</div>
                         )
                     })}</div>
                     <div className="flex items-center gap-5 flex-wrap">{project?.skills.map((item, index)=>{
@@ -68,12 +68,12 @@ const DynamicProjectPage= ( { params } : { params: { id: number}}) =>{
                 </div>
                 <div className="flex items-center gap-5">
 
-                    <div className=" p-2 bg-white rounded-full hover:bg-gray-300">
+                    <div className=" p-2 shadow-md bg-white rounded-full hover:bg-gray-300">
                         <Link href={project?.Github || '_blank'}>
                             <BsGithub size={60}/>
                         </Link>                    
                     </div>
-                    <div className="p-2 bg-white rounded-full hover:bg-gray-300">
+                    <div className="p-2 shadow-md bg-white rounded-full hover:bg-gray-300">
                         <Link href={project?.LiveSite || '_blank' }>
                             <AiOutlineLink size={60}/>
                         </Link> 
