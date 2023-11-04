@@ -67,7 +67,7 @@ const Home: React.FC = () => {
             })}</div>
       </h1>
 
-      <div className="  pt-[5rem] w-full h-full flex-col-reverse lg:flex-row flex gap-[4rem] justify-center items-center">
+      <div className=" overflow-auto  pt-[5rem] w-full h-full flex-col-reverse lg:flex-row flex gap-[4rem] justify-center items-center">
         <Intro greeting={introduction.greeting} title={introduction.title} intro={introduction.intro} call={introduction.call}/>
         <motion.div
           variants={variant}
