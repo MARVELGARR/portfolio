@@ -151,7 +151,7 @@
 
 .let7 {
   animation: drop 1.2s ease-in-out infinite;
-  animation-delay: 1.8s;
+  animation-delay: 0.5s;
 }
 
 @keyframes drop {
