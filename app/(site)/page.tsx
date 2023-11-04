@@ -64,9 +64,10 @@ const Home: React.FC = () => {
                     
                   </div>
                 )
-            })}</div></h1>
+            })}</div>
+      </h1>
 
-      <div className="   w-full h-full flex-col-reverse lg:flex-row flex gap-[4rem] justify-center items-center">
+      <div className="  pt-[5rem] w-full h-full flex-col-reverse lg:flex-row flex gap-[4rem] justify-center items-center">
         <Intro greeting={introduction.greeting} title={introduction.title} intro={introduction.intro} call={introduction.call}/>
         <motion.div
           variants={variant}
