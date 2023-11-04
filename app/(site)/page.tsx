@@ -8,6 +8,7 @@ import { BsGithub } from "react-icons/bs";
 import { CiTwitter } from "react-icons/ci";
 import { SiFrontendmentor, SiHashnode } from "react-icons/si";
 
+
 const introduction ={
   greeting: `Hello, I'm Marvellous`,
   title: `Frontend developer`,
@@ -52,14 +53,15 @@ const Home: React.FC = () => {
   ]
 
   return (
-    <div className=" w-full  h-full relative px-5 object-cover object-center bg-[url(/images/3252880.jpg)] dark:bg-[url(/images/59276.jpg)] ">
-      <h1 className="text-white flex items-center absolute top-3 left-4 dark:text-white text-2xl font-extrabold px-4 pt-3">Marvel<span className="text-cyan-950 dark:text-cyan-950">Garra</span> <div className="flex ml-24 gap-8">{profileItems.map((items, index)=>{
+    <div className=" w-full  h-full relative px-5 sm:object-cover object-center ob bg-[url(/images/3252880.jpg)] dark:bg-[url(/images/59276.jpg)] ">
+      <h1 className="text-white flex items-center absolute top-3 left-4 dark:text-white text-2xl font-extrabold px-4 pt-3">Marvel<span className="text-cyan-950 dark:text-cyan-950">Garra</span> <div className="flex ml-7 gap-3 flex-wrap">{profileItems.map((items, index)=>{
                 return(
                   <div key={index} className="flex  gap-3">
                     <Link className='flex hover:border-2 w-fit dark:hover:bg-cyan-950 hover:bg-white hover:p-2 hover:rounded-full gap-5 items-center' target='_blank' href={items.link}>                         
-                      <div className=" text-cyan-950">{items.icon}</div>
+                      <div className=" text-cyan-950 dark:text-white">{items.icon}</div>
                       <div className="hidden">{items.name}</div>                         
                     </Link>
+                    
                   </div>
                 )
             })}</div></h1>
@@ -74,6 +76,7 @@ const Home: React.FC = () => {
         >
           <UserImage image={userImage.image} alt={userImage.alt} />
         </motion.div>
+        
       </div>
     </div>
   );

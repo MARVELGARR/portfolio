@@ -4,18 +4,19 @@ import { sidebarItems } from "./desktopSideBar"
 import { Button } from "@/components/ui/button"
 import useActive from "@/app/Hooks/useActive"
 import BarItems from "../items/sideBarItems"
+import { ModeToggle } from "../themeToggle"
 
 const MobileBar: React.FC = () =>{
 
     const {handleChange, value} = useActive(2)
 
     return (
-        <div className="flex w-full h-full justify-between items-center">
+        <div className="flex w-full relative px-5 h-full justify-between  items-center">
             {sidebarItems.map((item, index)=>{
                 return (
                     <Link key={index} href={item.link} className="" >
                         <Button onClick={()=>handleChange(index)}
-                            className={`  ${ value == index ? " p-2 rounded-xl " : ''} bg-white dark:text-white dark:bg-cyan-950 dark:hover:text-cyan-950 dark:hover:bg-white hover:text-white hover:bg-black text-md text-black w-full`}
+                            className={`  ${ value == index ? " p-2 rounded-xl bg-cyan-950 text-white dark:bg-white dark:text-cyan-950" : 'text-cyan-950 bg-white dark:bg-cyan-950 dark:text-white'} dark:hover:text-cyan-950 dark:hover:bg-white hover:text-white hover:bg-cyan-950 w-full`}
                         >
                             <BarItems className=''>
                                 {item.icon}
@@ -25,6 +26,7 @@ const MobileBar: React.FC = () =>{
                     </Link>
                 )
             })}
+            <div draggable={true} className=" absolute w-fit h-full top-3 sm:hidden left-[5rem]"><ModeToggle/></div>
         </div>
     )
 }

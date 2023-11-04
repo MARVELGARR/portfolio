@@ -79,8 +79,9 @@ const DesktopSideBar: React.FC = () => {
                         key={index}
                     >
                         <Button
+                            
                             onClick={()=>handleChange(index)}
-                            className={` ${ value == index ? " " : ''} bg-white dark:text-white dark:bg-cyan-950 dark:hover:text-cyan-950 dark:hover:bg-white hover:text-white hover:bg-black text-md text-black w-full h-14`}
+                            className={` ${ value == index ? " bg-cyan-950 text-white dark:bg-white dark:text-cyan-950" : 'text-cyan-950 bg-white dark:bg-cyan-950 dark:text-white'}    dark:hover:text-cyan-950 dark:hover:bg-white hover:text-white hover:bg-cyan-950 text-md  w-full h-14`}
                             
                         >
                             <BarItems className=''>

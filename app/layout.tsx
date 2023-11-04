@@ -4,6 +4,8 @@ import './globals.css';
 import DesktopSideBar from './Components/Reuseable Components/SideBars/desktopSideBar';
 import { ThemeProvider } from './Components/theme-provider';
 import MobileBar from './Components/Reuseable Components/SideBars/mobileBar';
+import Loading from './(site)/loading';
+import { Suspense } from 'react';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -41,9 +43,12 @@ export default function RootLayout({
             <div className="h-full">
               <DesktopSideBar />
             </div>
-            <div className=" object-cover object-top dark:text-white h-screen sm:w-[80%] sm:h-full text-cyan-950">
-              {children}
-            </div>
+            <Suspense fallback={<Loading/>}>
+
+              <div className="  object-cover object-top dark:text-white h-full w-full sm:w-[80%] sm:h-full text-cyan-950">
+                {children}
+              </div>
+            </Suspense>
           </div>
           <div className='w-full dark:bg-cyan-950 bg-white flex h-16 justify-center items-center fixed bottom-0 sm:hidden'>
             <MobileBar />

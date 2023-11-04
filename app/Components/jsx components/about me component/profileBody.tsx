@@ -23,6 +23,7 @@ const ProfileBody = ( ) =>{
                 Project.slice(0, 2).map((item)=>{
                     return (
                         <ProjectCard
+                            className="hidden sm:flex"
                             key={item.id}
                             id={item.id}
                             site={item.LiveSite}
