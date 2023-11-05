@@ -8,7 +8,7 @@ import { ModeToggle } from "../themeToggle"
 
 const MobileBar: React.FC = () =>{
 
-    const {handleChange, value} = useActive(2)
+    const {handleChange, value} = useActive(0)
 
     return (
         <div className="flex w-full relative px-5 h-full justify-between  items-center">
