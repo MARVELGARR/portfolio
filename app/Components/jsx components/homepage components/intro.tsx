@@ -19,7 +19,7 @@ const Intro: React.FC<IntroProps> = ({greeting, title, intro, call}) =>{
     };
 
     return (
-        <div className="flex overflow-auto flex-col gap-7 flex-wrap max-w-lg">
+        <div className="flex overflow-auto flex-col gap-7  max-w-lg">
             <h1 className=" font-bold text-3xl">{greeting}</h1>
             <h3 className=" font-bold text-xl">{title}</h3>
             <p className=" leading-6">{intro}</p>

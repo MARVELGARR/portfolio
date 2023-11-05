@@ -53,7 +53,7 @@ const Home: React.FC = () => {
   ]
 
   return (
-    <div className=" overflow-auto w-full  h-full relative px-5 sm:object-cover object-center ob bg-[url(/images/3252880.jpg)] dark:bg-[url(/images/59276.jpg)] ">
+    <div className=" pb-[5rem] sm:pb-[1px] overflow-auto w-full  h-full relative px-5 sm:object-cover object-center ob bg-[url(/images/3252880.jpg)] dark:bg-[url(/images/59276.jpg)] ">
       <h1 className="text-white flex items-center absolute top-3 left-4 dark:text-white text-2xl font-extrabold px-4 pt-3">Marvel<span className="text-cyan-950 dark:text-cyan-950">Garra</span> <div className="flex ml-7 gap-3 flex-wrap">{profileItems.map((items, index)=>{
                 return(
                   <div key={index} className="flex  gap-3">
@@ -67,7 +67,7 @@ const Home: React.FC = () => {
             })}</div>
       </h1>
 
-      <div className="  pt-[5rem] w-full h-full flex-col-reverse lg:flex-row flex gap-[4rem] justify-center items-center">
+      <div className=" pt-[5rem] w-full h-full flex-col-reverse lg:flex-row flex gap-[4rem] justify-center items-center">
         <Intro greeting={introduction.greeting} title={introduction.title} intro={introduction.intro} call={introduction.call}/>
         <motion.div
           variants={variant}
