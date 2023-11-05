@@ -11,7 +11,7 @@ const MobileBar: React.FC = () =>{
     const {handleChange, value} = useActive(0)
 
     return (
-        <div className="flex w-full relative px-5 h-full justify-between  items-center">
+        <div className="flex w-full px-5 h-full justify-between  items-center">
             {sidebarItems.map((item, index)=>{
                 return (
                     <Link key={index} href={item.link} className="" >
@@ -26,7 +26,7 @@ const MobileBar: React.FC = () =>{
                     </Link>
                 )
             })}
-            <div draggable={true} className=" absolute w-fit h-full top-3 sm:hidden left-[5rem]"><ModeToggle/></div>
+            
         </div>
     )
 }
