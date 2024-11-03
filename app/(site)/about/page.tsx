@@ -1,7 +1,9 @@
 'use client'
 
-import ProfileImage from "@/app/Components/jsx components/about me component/profileImage";
-import ProfileBody from '@/app/Components/jsx components/about me component/profileBody';
+import ProfileBody from "@/app/_Components/jsx components/about me component/profileBody";
+import ProfileImage from "@/app/_Components/jsx components/about me component/profileImage";
+
+
 
 
 const About: React.FC = () => {

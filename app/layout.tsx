@@ -1,12 +1,13 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
-import DesktopSideBar from './Components/Reuseable Components/SideBars/desktopSideBar';
-import { ThemeProvider } from './Components/theme-provider';
-import MobileBar from './Components/Reuseable Components/SideBars/mobileBar';
-import Loading from './(site)/loading';
+import { ThemeProvider } from './_Components/theme-provider';
+import DesktopSideBar from './_Components/Reuseable Components/SideBars/desktopSideBar';
 import { Suspense } from 'react';
-import { ModeToggle } from './Components/Reuseable Components/themeToggle';
+import Loading from './(site)/loading';
+import { ModeToggle } from './_Components/Reuseable Components/themeToggle';
+import MobileBar from './_Components/Reuseable Components/SideBars/mobileBar';
+
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -49,7 +50,7 @@ export default function RootLayout({
               <div className="  object-cover object-top dark:text-white h-full w-full sm:w-[80%] sm:h-full text-cyan-950">
                 {children}
               </div>
-              <div  className=" absolute w-fit h-full top-2  sm:hidden right-3"><ModeToggle/></div>
+              <div  className=" absolute w-fit h-full top-20 md:top-10 lg:top-2  sm:hidden right-3"><ModeToggle/></div>
             </Suspense>
           </div>
           <div className='w-full dark:bg-cyan-950 bg-white flex h-16 justify-center items-center fixed bottom-0 sm:hidden'>

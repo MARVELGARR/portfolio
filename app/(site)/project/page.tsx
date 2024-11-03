@@ -1,5 +1,6 @@
 'use client'
-import ProjectCard from "@/app/Components/jsx components/project components/projectCard"
+
+import ProjectCard from "@/app/_Components/jsx components/project components/projectCard"
 import { Project } from "@/lib/SiteData"
 import Link from "next/link"
 

@@ -34,7 +34,7 @@ const Intro: React.FC<IntroProps> = ({greeting, title, intro, call}) =>{
                     </div>
                 </Button>
                 <Button className="w-fit px-3 py-2 hover:bg-white hover:border-cyan-950 hover:border-2 hover:text-cyan-950 dark:hover:bg-cyan-950">
-                    <Link href="https://drive.google.com/file/d/1MdwPZ69ouFc1F3zJjrzgE6gIId_I0YVf/view?usp=drive_link">
+                    <Link href="https://drive.google.com/file/d/1pQK4AUDt9im3osMtqy8JhFFo5NApjb6X/view?usp=drive_link">
                         Resume
                     </Link> 
                 </Button>

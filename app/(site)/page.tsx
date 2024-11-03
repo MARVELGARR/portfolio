@@ -1,21 +1,22 @@
 'use client'
-import Intro from "@/app/Components/jsx components/homepage components/intro";
-import UserImage from "@/app/Components/jsx components/homepage components/userImage";
+
 import { easeOut, motion } from "framer-motion";
 import Link from "next/link";
 import { AiOutlineFacebook, AiOutlineLinkedin } from "react-icons/ai";
 import { BsGithub } from "react-icons/bs";
 import { CiTwitter } from "react-icons/ci";
 import { SiFrontendmentor, SiHashnode } from "react-icons/si";
+import Intro from "../_Components/jsx components/homepage components/intro";
+import UserImage from "../_Components/jsx components/homepage components/userImage";
 
 
 const introduction ={
   greeting: `Hello, I'm Marvellous`,
   title: `Frontend developer`,
   intro: `
-  a passionate Frontend Developer. I specialize in creating modern and engaging web experiences using technologies like HTML, CSS, SCSS, Tailwind, Framer-Motion, JavaScript/TypeScript, React.js, Redux Toolkit and Next.js.
-  With a strong foundation in web development, I'm dedicated to delivering clean, responsive, and user-friendly websites and applications that make a lasting impact. You can explore my code and projects on GitHub and connect with me on LinkedIn.
-  Let's collaborate to turn your web development ideas into reality. Reach out to me if you have any questions or exciting projects in mind!
+  I’m a passionate full-stack developer dedicated to creating modern and engaging web experiences. With expertise in Next.js, I specialize in building dynamic applications that seamlessly integrate frontend and backend technologies. My toolkit includes HTML, CSS, SCSS, Tailwind, Framer Motion, JavaScript/TypeScript, React.js, and Redux Toolkit, allowing me to deliver clean, responsive, and user-friendly solutions that leave a lasting impact.
+
+Driven by a commitment to excellence, I’m always eager to tackle new challenges and turn innovative ideas into reality. Explore my projects on GitHub and connect with me on LinkedIn—I’d love to collaborate on exciting ventures and answer any questions you may have. Let’s bring your web development vision to life!
   `,
   call: `Email me`
 }

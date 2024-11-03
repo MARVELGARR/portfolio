@@ -2,9 +2,9 @@
 import Link from "next/link"
 import { sidebarItems } from "./desktopSideBar"
 import { Button } from "@/components/ui/button"
-import useActive from "@/app/Hooks/useActive"
 import BarItems from "../items/sideBarItems"
 import { ModeToggle } from "../themeToggle"
+import useActive from "@/app/_Hooks/useActive"
 
 const MobileBar: React.FC = () =>{
 
