@@ -50,7 +50,7 @@ export default function RootLayout({
               <div className="  object-cover object-top dark:text-white h-full w-full sm:w-[80%] sm:h-full text-cyan-950">
                 {children}
               </div>
-              <div  className=" absolute w-fit h-full top-20 md:top-10 lg:top-2  sm:hidden right-3"><ModeToggle/></div>
+              <div   className=" absolute w-fit h-full top-20 md:top-10 lg:top-2  sm:hidden right-3"><ModeToggle/></div>
             </Suspense>
           </div>
           <div className='w-full dark:bg-cyan-950 bg-white flex h-16 justify-center items-center fixed bottom-0 sm:hidden'>
