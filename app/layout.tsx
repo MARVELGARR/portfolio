@@ -1,64 +1,44 @@
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import './globals.css';
-import { ThemeProvider } from './_Components/theme-provider';
-import DesktopSideBar from './_Components/Reuseable Components/SideBars/desktopSideBar';
-import { Suspense } from 'react';
-import Loading from './(site)/loading';
-import { ModeToggle } from './_Components/Reuseable Components/themeToggle';
-import MobileBar from './_Components/Reuseable Components/SideBars/mobileBar';
+import type React from "react"
+import type { Metadata } from "next"
+import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google"
+import { Analytics } from "@vercel/analytics/next"
+import "./globals.css"
 
-
-const inter = Inter({ subsets: ['latin'] });
+const _geist = Geist({ subsets: ["latin"] })
+const _geistMono = Geist_Mono({ subsets: ["latin"] })
+const _spaceGrotesk = Space_Grotesk({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: 'Home',
-  description: 'Home Page',
-};
+  title: "Marvellous Obatale — Full Stack Developer",
+  description:
+    "Full-Stack Developer with 2+ years of experience building performant web applications. Specialized in React, Next.js, TypeScript, Node.js, and modern web technologies.",
+  keywords: ["Full Stack Developer", "React", "Next.js", "TypeScript", "Node.js", "Web Development"],
+  authors: [{ name: "Marvellous Obatale" }],
+  creator: "Marvellous Obatale",
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://marvellous-portfolio.vercel.app",
+    siteName: "Marvellous Obatale",
+    title: "Marvellous Obatale — Full Stack Developer",
+    description: "Full-Stack Developer with 2+ years of experience building performant web applications.",
+  },
+}
 
 export default function RootLayout({
   children,
-}: {
-  children: React.ReactNode;
-}) {
+}: Readonly<{
+  children: React.ReactNode
+}>) {
   return (
-    <html lang='en'>
+    <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com"/>
-        <link rel="preconnect" href="https://fonts.gstatic.com"  />
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet"/>
-        <link rel="preconnect" href="https://fonts.googleapis.com"/>
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap" rel="stylesheet"/>
-        <link rel="preconnect" href="https://fonts.googleapis.com"/>
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Rampart+One&display=swap" rel="stylesheet"></link>
+        <link rel="icon" href="/favicon.ico" />
       </head>
-      <body className={`${inter.className} h-[40rem] flex w-full sm:h-screen sm:flex sm:justify-center sm:items-center bg-slate-300`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <div className=' w-full h-fit sm:h-[80%] sm:w-[80%]   sm:flex'>
-            <div className="h-full">
-              <DesktopSideBar />
-            </div>
-            <Suspense fallback={<Loading/>}>
-
-              <div className="  object-cover object-top dark:text-white h-full w-full sm:w-[80%] sm:h-full text-cyan-950">
-                {children}
-              </div>
-              <div   className=" absolute w-fit h-full top-20 md:top-10 lg:top-2  sm:hidden right-3"><ModeToggle/></div>
-            </Suspense>
-          </div>
-          <div className='w-full dark:bg-cyan-950 bg-white flex h-16 justify-center items-center fixed bottom-0 sm:hidden'>
-
-            <MobileBar />
-          </div>
-        </ThemeProvider>
+      <body className={`font-sans antialiased`}>
+        {children}
+        <Analytics />
       </body>
     </html>
-  );
+  )
 }
