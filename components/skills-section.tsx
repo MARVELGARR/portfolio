@@ -16,18 +16,19 @@ export function SkillsSection() {
   }
 
   const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
+    hidden: { opacity: 0, y: 10 },
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6 },
+      transition: { duration: 0.4 },
     },
   }
 
   return (
-    <section id="skills" className="relative py-32 px-4 bg-background overflow-hidden">
-      <div className="absolute -top-40 -right-40 w-80 h-80 bg-secondary/10 rounded-full blur-3xl" />
-      <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-primary/10 rounded-full blur-3xl" />
+    <section id="skills" className="relative py-32 px-4 border-t border-primary/10 overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute top-0 right-0 w-1/3 h-px bg-gradient-to-l from-primary/30 to-transparent" />
+      <div className="absolute bottom-0 left-0 w-1/3 h-px bg-gradient-to-r from-primary/30 to-transparent" />
 
       <motion.div
         className="relative max-w-6xl mx-auto"
@@ -36,9 +37,20 @@ export function SkillsSection() {
         transition={{ duration: 0.6 }}
         viewport={{ once: true, margin: "-100px" }}
       >
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-foreground">Technical Skills</h2>
-          <p className="text-muted-foreground text-lg">Technologies I've mastered over my journey</p>
+        <div className="mb-16 space-y-4">
+          <div className="flex items-center gap-4">
+            <div className="text-[10px] font-mono text-primary/50 uppercase tracking-widest hidden sm:block">
+              [INDEX: 03]
+            </div>
+            <div className="h-px w-12 bg-primary/20" />
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground tracking-tighter uppercase">
+              Tech_Capabilities
+            </h2>
+            <div className="h-px flex-1 bg-primary/20" />
+          </div>
+          <p className="text-muted-foreground text-lg font-mono">
+            {`// Listing core architectural components and stack expertise.`}
+          </p>
         </div>
 
         <motion.div
@@ -52,26 +64,32 @@ export function SkillsSection() {
             <motion.div
               key={skillGroup.category}
               variants={itemVariants}
-              whileHover={{ y: -5 }}
-              className="group p-8 glass rounded-2xl border border-primary/20 hover:border-primary/50 card-hover"
+              className="group p-8 bg-card border border-primary/10 hover:border-primary/40 transition-all duration-300"
             >
-              <h3 className="text-2xl font-bold mb-6 gradient-text">{skillGroup.category}</h3>
-              <ul className="space-y-4">
+              <div className="flex items-center gap-3 mb-8">
+                <div className="w-1.5 h-6 bg-primary" />
+                <h3 className="text-xl font-bold uppercase tracking-tight text-foreground">{skillGroup.category}</h3>
+              </div>
+
+              <ul className="space-y-6">
                 {skillGroup.items.map((skill, index) => (
                   <motion.li
                     key={skill.name}
-                    initial={{ opacity: 0, x: -20 }}
+                    initial={{ opacity: 0, x: -10 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: index * 0.1 }}
+                    transition={{ delay: index * 0.05 }}
                     viewport={{ once: true }}
-                    className="flex justify-between items-center group/item"
+                    className="group/item flex flex-col gap-1"
                   >
-                    <span className="text-foreground/90 group-hover/item:text-foreground transition-colors">
-                      {skill.name}
-                    </span>
-                    <motion.span className="text-xs text-muted-foreground px-3 py-1 rounded-full border border-primary/20 group-hover/item:border-primary/40 group-hover/item:text-primary/80 transition-all">
-                      {skill.level}
-                    </motion.span>
+                    <div className="flex justify-between items-end">
+                      <span className="text-sm font-mono text-foreground/80 group-hover/item:text-primary transition-colors">
+                        {`> ${skill.name}`}
+                      </span>
+                      <span className="text-[9px] font-mono text-muted-foreground uppercase tracking-widest">
+                        {`[ ${skill.level} ]`}
+                      </span>
+                    </div>
+                    <div className="w-full h-[1px] bg-primary/5 group-hover/item:bg-primary/20 transition-colors" />
                   </motion.li>
                 ))}
               </ul>

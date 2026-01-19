@@ -1,11 +1,10 @@
 "use client"
 
 import type React from "react"
-
 import { heroContent, socials } from "@/lib/portfolio-data"
 import Link from "next/link"
 import { motion } from "framer-motion"
-import { Github, Linkedin, Mail, Twitter, FileText } from "lucide-react"
+import { Github, Linkedin, Mail, Twitter, FileText, ChevronRight } from "lucide-react"
 
 const iconMap: Record<string, React.ReactNode> = {
   Github: <Github size={20} />,
@@ -37,36 +36,44 @@ export function HeroSection() {
   }
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/5 via-transparent to-secondary/5" />
-      <div className="absolute top-20 -left-40 w-80 h-80 bg-primary/20 rounded-full blur-3xl animate-glow" />
-      <div className="absolute bottom-20 -right-40 w-80 h-80 bg-secondary/20 rounded-full blur-3xl" />
+    <section className="relative min-h-[90vh] flex items-center justify-center px-4 py-20 overflow-hidden">
+      {/* Technical Background */}
+      <div className="absolute inset-0 bg-[radial-gradient(#e5e7eb_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)] dark:bg-[radial-gradient(#1e293b_1px,transparent_1px)] opacity-50" />
+      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
+      <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
 
       <motion.div
-        className="relative max-w-4xl mx-auto text-center space-y-8 z-10"
+        className="relative max-w-4xl mx-auto text-center space-y-12 z-10"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
         <motion.div variants={itemVariants} className="inline-block">
-          <motion.div
-            animate={{ rotate: 360 }}
-            transition={{ duration: 20, repeat: Number.POSITIVE_INFINITY, ease: "linear" }}
-            className="w-24 h-24 rounded-full bg-gradient-to-br from-primary via-secondary to-primary p-0.5"
-          >
-            <div className="w-full h-full rounded-full bg-background flex items-center justify-center text-4xl font-bold gradient-text">
+          <div className="relative">
+            <div className="absolute -inset-4 border border-primary/20 animate-pulse" />
+            <div className="w-20 h-20 bg-card border-2 border-primary flex items-center justify-center text-3xl font-bold font-mono tracking-tighter">
               MO
             </div>
-          </motion.div>
+            <div className="absolute -top-1 -right-1 w-2 h-2 bg-primary" />
+            <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-primary" />
+          </div>
         </motion.div>
 
         <motion.div variants={itemVariants} className="space-y-6">
           <div className="space-y-4">
-            <h1 className="text-5xl md:text-7xl font-bold text-foreground text-balance leading-tight">
-              Hi, I'm <span className="gradient-text">{heroContent.name}</span>
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              className="inline-flex items-center gap-2 px-3 py-1 border border-primary/20 bg-primary/5 text-[10px] uppercase tracking-[0.3em] text-primary mb-4"
+            >
+              <span className="w-1.5 h-1.5 bg-primary animate-pulse" />
+              System Online: Full Stack Dev
+            </motion.div>
+            <h1 className="text-5xl md:text-8xl font-bold text-foreground text-balance leading-none tracking-tighter">
+              {heroContent.name.toUpperCase()}
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-              {heroContent.description}
+            <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-2xl mx-auto font-mono">
+              {`// ${heroContent.description}`}
             </p>
           </div>
         </motion.div>
@@ -74,66 +81,50 @@ export function HeroSection() {
         <motion.div variants={itemVariants} className="flex gap-4 justify-center flex-wrap pt-4">
           <Link href="#projects">
             <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 bg-gradient-to-r from-primary to-secondary text-foreground rounded-lg font-semibold hover:shadow-lg hover:shadow-primary/50 transition-all duration-300"
+              whileHover={{ scale: 1.02 }}
+              whileTap={{ scale: 0.98 }}
+              className="group px-8 py-4 bg-primary text-primary-foreground rounded-none font-mono text-xs uppercase tracking-[0.2em] font-bold flex items-center gap-2 hover:bg-primary/90 transition-all border border-primary"
             >
-              View My Work
+              Initialize Projects
+              <ChevronRight size={14} className="group-hover:translate-x-1 transition-transform" />
             </motion.button>
           </Link>
           <Link href="#contact">
             <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 border-2 border-primary text-primary rounded-lg font-semibold hover:bg-primary/10 transition-all duration-300"
+              whileHover={{ scale: 1.02, backgroundColor: "var(--primary)", color: "var(--primary-foreground)" }}
+              whileTap={{ scale: 0.98 }}
+              className="px-8 py-4 border border-primary text-primary rounded-none font-mono text-xs uppercase tracking-[0.2em] font-bold transition-all"
             >
-              Let's Talk
+              Establish Connection
             </motion.button>
           </Link>
         </motion.div>
 
-        <motion.div variants={itemVariants} className="flex gap-4 justify-center flex-wrap pt-4">
+        <motion.div variants={itemVariants} className="flex gap-6 justify-center flex-wrap pt-4 border-t border-primary/10 max-w-xs mx-auto">
           {socials.map((social, index) => (
             <motion.a
               key={social.id}
               href={social.link}
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.1, y: -5 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.2, color: "var(--primary)" }}
+              whileTap={{ scale: 0.9 }}
               transition={{ delay: index * 0.1 }}
-              className="p-3 glass rounded-lg hover:border-primary/50 text-primary hover:text-secondary transition-all duration-300"
+              className="text-muted-foreground transition-all duration-300"
               aria-label={social.name}
             >
               {iconMap[social.icon]}
             </motion.a>
           ))}
         </motion.div>
-
-        <motion.div
-          variants={itemVariants}
-          className="flex gap-6 justify-center flex-wrap text-sm text-muted-foreground pt-8"
-        >
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            {heroContent.location}
-          </div>
-          <div className="flex items-center gap-2">
-            <span className="w-2 h-2 rounded-full bg-secondary animate-pulse" />
-            {heroContent.phone}
-          </div>
-        </motion.div>
       </motion.div>
 
-      <motion.div
-        animate={{ y: [0, 8, 0] }}
-        transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-      >
-        <div className="w-6 h-10 border-2 border-primary/40 rounded-full flex items-center justify-center">
-          <div className="w-1 h-2 bg-primary rounded-full" />
-        </div>
-      </motion.div>
+      {/* Side decorative elements */}
+      <div className="absolute left-8 top-1/2 -translate-y-1/2 hidden lg:flex flex-col gap-8">
+        <div className="w-px h-20 bg-primary/20" />
+        <span className="[writing-mode:vertical-lr] text-[10px] uppercase tracking-[0.5em] text-muted-foreground/50">PROTO.2024</span>
+        <div className="w-px h-20 bg-primary/20" />
+      </div>
     </section>
   )
 }

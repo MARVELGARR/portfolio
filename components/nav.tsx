@@ -4,6 +4,7 @@ import Link from "next/link"
 import { useState } from "react"
 import { Menu, X } from "lucide-react"
 import { motion } from "framer-motion"
+import { ModeToggle } from "@/components/mode-toggle"
 
 export function Nav() {
   const [isOpen, setIsOpen] = useState(false)
@@ -26,9 +27,9 @@ export function Nav() {
       <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
         <Link
           href="/"
-          className="text-2xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent"
+          className="text-2xl font-bold tracking-tighter text-foreground"
         >
-          MO
+          [MO]
         </Link>
 
         <div className="hidden md:flex gap-8 items-center">
@@ -36,16 +37,24 @@ export function Nav() {
             <Link
               key={item.name}
               href={item.href}
-              className="text-foreground/80 hover:text-primary transition-colors duration-300 font-medium text-sm"
+              className="group relative text-foreground/80 hover:text-primary transition-colors duration-300 font-mono text-xs uppercase tracking-widest"
             >
+              <span className="opacity-0 group-hover:opacity-100 transition-opacity">{"<"}</span>
               {item.name}
+              <span className="opacity-0 group-hover:opacity-100 transition-opacity">{"/>"}</span>
             </Link>
           ))}
+          <div className="pl-4 border-l border-primary/20">
+            <ModeToggle />
+          </div>
         </div>
 
-        <button onClick={() => setIsOpen(!isOpen)} className="md:hidden p-2 text-foreground">
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="md:hidden flex items-center gap-4">
+          <ModeToggle />
+          <button onClick={() => setIsOpen(!isOpen)} className="p-2 text-foreground">
+            {isOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {isOpen && (
@@ -59,10 +68,10 @@ export function Nav() {
             <Link
               key={item.name}
               href={item.href}
-              className="block text-foreground/80 hover:text-primary transition-colors duration-300 font-medium"
+              className="block text-foreground/80 hover:text-primary transition-colors duration-300 font-mono text-sm uppercase tracking-widest"
               onClick={() => setIsOpen(false)}
             >
-              {item.name}
+              {`[ ${item.name} ]`}
             </Link>
           ))}
         </motion.div>
