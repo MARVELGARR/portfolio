@@ -3,7 +3,7 @@
 import type React from "react"
 import { heroContent, socials } from "@/lib/portfolio-data"
 import Link from "next/link"
-import { motion } from "framer-motion"
+import { motion, type Variants } from "framer-motion"
 import { Github, Linkedin, Mail, Twitter, FileText, ChevronRight } from "lucide-react"
 
 const iconMap: Record<string, React.ReactNode> = {
@@ -15,7 +15,7 @@ const iconMap: Record<string, React.ReactNode> = {
 }
 
 export function HeroSection() {
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -26,7 +26,7 @@ export function HeroSection() {
     },
   }
 
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 20 },
     visible: {
       opacity: 1,

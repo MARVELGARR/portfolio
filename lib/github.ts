@@ -1,4 +1,5 @@
 export interface GitHubRepo {
+  fork: any;
   id: number;
   name: string;
   description: string;
