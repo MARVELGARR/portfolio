@@ -5,5 +5,6 @@
 
 export const hashnodeConfig = {
   endpoint: "https://gql.hashnode.com",
-  host: process.env.NEXT_PUBLIC_HOST || "", 
+  host: process.env.NEXT_PUBLIC_HOST || "",
+  token: process.env.NEXT_PUBLIC_HOST || ""
 };
