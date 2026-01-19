@@ -13,7 +13,7 @@ export default async function BlogPage() {
         <div className="min-h-screen pt-24 pb-20 px-4 md:px-8 max-w-7xl mx-auto">
             <div className="space-y-2 mb-16">
                 <div className="inline-flex items-center gap-2 px-3 py-1 bg-primary/5 border border-primary/20 text-[10px] font-mono text-primary uppercase tracking-[0.3em] mb-4">
-                    System_Logs
+                    Blogs
                 </div>
                 <h1 className="text-4xl md:text-6xl font-bold uppercase tracking-tighter">
                     Developer_Chronicles

@@ -35,7 +35,7 @@ const PUBLICATION_QUERY = `
 `;
 
 export async function getHashnodePosts(): Promise<HashnodePost[]> {
-  const { endpoint, host } = hashnodeConfig;
+  const { endpoint, host, token } = hashnodeConfig;
 
   if (!host) {
     console.warn("NEXT_PUBLIC_HASHNODE is not defined.");
@@ -50,6 +50,7 @@ export async function getHashnodePosts(): Promise<HashnodePost[]> {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "Authorization": `${token}`
       },
       body: JSON.stringify({
         query: PUBLICATION_QUERY,

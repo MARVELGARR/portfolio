@@ -1,7 +1,7 @@
 'use client'
 
-import ProfileBody from "@/app/_Components/jsx components/about me component/profileBody";
-import ProfileImage from "@/app/_Components/jsx components/about me component/profileImage";
+import ProfileBody from "@/features/about/components/ProfileBody";
+import ProfileImage from "@/features/about/components/ProfileImage";
 
 
 
@@ -12,7 +12,7 @@ const About: React.FC = () => {
 
   return (
     <div className=" h-full sm:h-full px-[1rem] py-[1rem] flex gap-2 w-full md:h-full object-cover object-center bg-[url(/images/3252880.jpg)] dark:bg-[url(/images/59276.jpg)] ">
-       <title>Profile</title>
+      <title>Profile</title>
       <div className="flex-col md:flex-row flex sm:h-full">
 
         <div className="h-full sm:h-fit md:h-full px-2">
@@ -23,9 +23,9 @@ const About: React.FC = () => {
             </div>
           </ProfileImage>
         </div>
-        <ProfileBody/>
+        <ProfileBody />
       </div>
-      
+
     </div>
   );
 };

@@ -1,18 +1,18 @@
 'use client'
 
-import ProjectCard from "@/app/_Components/jsx components/project components/projectCard"
+import ProjectCard from "@/features/projects/components/ProjectCard"
 import { Project } from "@/lib/SiteData"
 import Link from "next/link"
 
-const Projects : React.FC = () =>{
+const Projects: React.FC = () => {
 
 
-    const handleClick = (id: number) =>{
+    const handleClick = (id: number) => {
         window.location.href = `/project/${id}`
     }
 
     return (
-  
+
         <div className="h-full overflow-auto">
             <title>Projects</title>
             <div className="  w-full h-full object-cover object-center bg-[url(/images/3252880.jpg)] dark:bg-[url(/images/59276.jpg)]">
@@ -21,25 +21,25 @@ const Projects : React.FC = () =>{
                 </div>
                 <div className=" card-container  gap-5 p-5">
                     {
-                        Project.map((item)=>{
-                            return(
+                        Project.map((item) => {
+                            return (
 
-                                <button type="button" 
+                                <button type="button"
                                     onClick={() => handleClick(item.id)}
                                     key={item.id}
                                 >
                                     <ProjectCard
                                         id={item.id}
                                         title={item.title}
-                                        stack={item.stack}    
+                                        stack={item.stack}
                                         image={item.images}
                                         description={item.description}
                                         github={item.Github}
                                         site={item.LiveSite}
                                     />
                                 </button>
-                                
-                                
+
+
                             )
                         })
                     }
@@ -49,5 +49,5 @@ const Projects : React.FC = () =>{
 
     )
 }
-  
+
 export default Projects

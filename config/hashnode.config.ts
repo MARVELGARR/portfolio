@@ -1,10 +1,10 @@
 
 
 
-
+import { getEnv } from "@/lib/env";
 
 export const hashnodeConfig = {
   endpoint: "https://gql.hashnode.com",
-  host: process.env.NEXT_PUBLIC_HOST || "",
-  token: process.env.NEXT_PUBLIC_HOST || ""
+  host: getEnv("HOST"),
+  token: getEnv("HASHNODE_TOKEN")
 };
