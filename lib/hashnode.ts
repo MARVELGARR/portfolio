@@ -59,7 +59,7 @@ export async function getHashnodePosts(): Promise<HashnodePost[]> {
         },
       }),
       signal: controller.signal,
-      next: { revalidate: 3600 }, // Revalidate every hour
+      next: { revalidate: 604800 },
     });
     
     clearTimeout(id);
