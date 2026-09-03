@@ -18,7 +18,21 @@ export function ProjectsSection() {
   const [selected, setSelected] = useState<PortfolioProject | null>(null)
 
   useEffect(() => {
-    fetchGitHubRepos("MARVELGARR").then((data) => setRepos(data.slice(0, 9))).finally(() => setLoading(false))
+    let isMounted = true
+
+    fetchGitHubRepos("MARVELGARR").then((data) => {
+      if (isMounted) {
+        setRepos(data.slice(0, 9))
+      }
+    }).finally(() => {
+      if (isMounted) {
+        setLoading(false)
+      }
+    })
+
+    return () => {
+      isMounted = false
+    }
   }, [])
 
   const filteredProjects = useMemo(() => staticProjects.filter((project) => {
