@@ -1,193 +1,31 @@
 export const socials = [
-  {
-    id: 1,
-    name: "github",
-    icon: "Github",
-    link: "https://github.com/MARVELGARR",
-  },
-  {
-    id: 2,
-    name: "linkedin",
-    icon: "Linkedin",
-    link: "https://linkedin.com/in/marvellous-obatale",
-  },
-  {
-    id: 3,
-    name: "twitter",
-    icon: "Twitter",
-    link: "https://twitter.com/MARVEL_GARRA",
-  },
-  {
-    id: 4,
-    name: "email",
-    icon: "Mail",
-    link: "mailto:marvellousobatale@gmail.com",
-  },
-  {
-    id: 5,
-    name: "hashnode",
-    icon: "FileText",
-    link: "https://marvelgarra.hashnode.dev/",
-  },
+  { id: 1, name: "github", icon: "Github", link: "https://github.com/MARVELGARR" },
+  { id: 2, name: "linkedin", icon: "Linkedin", link: "https://linkedin.com/in/marvellous-obatale" },
+  { id: 3, name: "twitter", icon: "Twitter", link: "https://twitter.com/MARVEL_GARRA" },
+  { id: 4, name: "email", icon: "Mail", link: "mailto:marvellousobatale@gmail.com" },
+  { id: 5, name: "hashnode", icon: "FileText", link: "https://marvelgarra.hashnode.dev/" },
 ]
 
-export const heroContent = {
-  name: "Marvellous Obatale",
-  title: "Full-Stack Developer",
-  description:
-    "Building performant web applications with React, Next.js, TypeScript, and Node.js. 2+ years of experience delivering 35% performance improvements and scaling user engagement.",
-  cta: "View My Work",
-  location: "Lagos, Nigeria",
-  phone: "+2348152795806",
-}
+export const heroContent = { name: "Marvellous Obatale", title: "Full-Stack Developer", description: "Building performant web applications with React, Next.js, TypeScript, and Node.js. 2+ years of experience delivering 35% performance improvements, 25% engagement growth, and systems that scale.", cta: "View My Work", location: "Lagos, Nigeria", phone: "+2348152795806" }
 
 export const skills = [
-  {
-    category: "Frontend",
-    items: [
-      { name: "JavaScript (ES6+)", level: "Expert" },
-      { name: "TypeScript", level: "Expert" },
-      { name: "React", level: "Expert" },
-      { name: "Next.js", level: "Expert" },
-      { name: "TailwindCSS", level: "Expert" },
-      { name: "Framer Motion", level: "Advanced" },
-      { name: "SCSS", level: "Advanced" },
-      { name: "shadcn/ui", level: "Advanced" },
-    ],
-  },
-  {
-    category: "Backend",
-    items: [
-      { name: "Node.js", level: "Expert" },
-      { name: "Express.js", level: "Advanced" },
-      { name: "MongoDB", level: "Advanced" },
-      { name: "PostgreSQL", level: "Advanced" },
-      { name: "Prisma", level: "Advanced" },
-      { name: "REST APIs", level: "Expert" },
-    ],
-  },
-  {
-    category: "Tools & Libraries",
-    items: [
-      { name: "Git/GitHub", level: "Expert" },
-      { name: "TanStack Query", level: "Advanced" },
-      { name: "Redux Toolkit", level: "Advanced" },
-      { name: "Zod", level: "Advanced" },
-      { name: "React Hook Form", level: "Advanced" },
-      { name: "Jest", level: "Intermediate" },
-      { name: "AWS S3", level: "Intermediate" },
-      { name: "Auth.js", level: "Advanced" },
-    ],
-  },
+  { category: "Frontend", items: ["JavaScript (ES6+)", "TypeScript", "React", "Next.js", "TailwindCSS", "Framer Motion", "SCSS", "shadcn/ui"].map((name) => ({ name, level: "Advanced" })) },
+  { category: "Backend", items: ["Node.js", "Express.js", "MongoDB", "PostgreSQL", "Prisma", "REST APIs"].map((name) => ({ name, level: "Advanced" })) },
+  { category: "Tools & Libraries", items: ["Git/GitHub", "TanStack Query", "Redux Toolkit", "Zod", "React Hook Form", "Jest", "AWS S3", "Auth.js"].map((name) => ({ name, level: "Advanced" })) },
 ]
 
 export const projects = [
-  {
-    id: 1,
-    title: "Country Explorer",
-    description:
-      "Interactive country information explorer with advanced search and filtering capabilities. Users can explore detailed country data including capitals, populations, borders, and time zones.",
-    technologies: ["Next.js", "TypeScript", "TailwindCSS", "Framer Motion"],
-    github: "https://github.com/MARVELGARR/restcountries",
-    live: "https://restcountries-delta.vercel.app/",
-    image: "/images/projects/rest country.jpg",
-    difficulty: "Normal",
-  },
-  {
-    id: 2,
-    title: "IP Address Tracker",
-    description:
-      "Geolocation tool that tracks IP addresses and displays location data on an interactive map with timezone and regional information.",
-    technologies: ["Next.js", "TailwindCSS", "Leaflet", "Geoip API", "Framer Motion"],
-    github: "https://github.com/MARVELGARR/IP-ADDRESS-TRACKER",
-    live: "https://elaborate-frangipane-b3631d.netlify.app/",
-    image: "/images/projects/ip tracker.jpg",
-    difficulty: "Hard",
-  },
-  {
-    id: 3,
-    title: "Comment Section App",
-    description:
-      "Full-stack real-time comment application with authentication, allowing users to post, edit, delete, and reply to comments with persistent data storage.",
-    technologies: ["Next.js", "React", "MongoDB", "Prisma", "Auth.js", "TypeScript"],
-    github: "https://github.com/MARVELGARR/commentsection-app",
-    live: "https://commentsection-app-3fhz-fdmtfi9w3-marvelgarr.vercel.app/",
-    image: "/images/projects/active-states.jpg",
-    difficulty: "Hard",
-  },
-  {
-    id: 4,
-    title: "Threads Clone",
-    description:
-      "Social media platform clone featuring real-time updates, responsive design, and modern UI/UX patterns for sharing and engaging with content.",
-    technologies: ["Next.js", "TailwindCSS", "MongoDB", "TypeScript"],
-    github: "https://github.com/MARVELGARR/threads-clone",
-    live: "#",
-    image: "/social-media-platform.jpg",
-    difficulty: "Normal",
-  },
-  {
-    id: 5,
-    title: "E-Commerce Product Page",
-    description:
-      "Advanced e-commerce product page with shopping cart functionality, responsive layouts, and smooth animations for enhanced user experience.",
-    technologies: ["React", "TailwindCSS", "Redux Toolkit", "Framer Motion"],
-    github: "https://github.com/MARVELGARR/ecommerce-product",
-    live: "#",
-    image: "/images/projects/desktop-design.jpg",
-    difficulty: "Hard",
-  },
-  {
-    id: 6,
-    title: "Link Shortener",
-    description:
-      "Utility application that shortens long URLs into concise, shareable links with easy copy-to-clipboard functionality and link management.",
-    technologies: ["React", "TailwindCSS", "SCSS", "External API"],
-    github: "https://github.com/MARVELGARR/urlshortener",
-    live: "https://soft-frangollo-f56877.netlify.app/",
-    image: "/images/projects/urlshortener.jpg",
-    difficulty: "Hard",
-  },
+  { id: 1, title: "Full Ledger System", description: "High-fidelity digital wallet microservices simulation with identity, ledger, transfers, audit trails, and event-driven communication.", technologies: ["Node.js", "TypeScript", "PostgreSQL", "RabbitMQ", "Docker"], github: "https://github.com/MARVELGARR/full-wallet-simulation", live: "#", image: "/images/projects/full-ledger-system.png", difficulty: "Hard", category: "Production", status: "Featured", impact: "Designed for resilient financial workflows with reliable asynchronous service communication.", architecture: "Microservices architecture using REST, PostgreSQL persistence, RabbitMQ events, Nginx, and Docker Compose." },
+  { id: 2, title: "Wallet Simulation API", description: "Production-grade event-driven wallet API for authentication, balances, transfers, idempotency, structured logging, and secure transaction flows.", technologies: ["Node.js", "Express 5", "TypeScript", "PostgreSQL", "Drizzle ORM"], github: "https://github.com/MARVELGARR/wallet-simulation", live: "https://wallet-simulation.onrender.com", image: "/images/projects/wallet-simulation-api.png", difficulty: "Hard", category: "Backend", status: "Live", impact: "Demonstrates safe financial API design with explicit validation, persistence, and operational visibility.", architecture: "Layered REST service with PostgreSQL, Drizzle ORM, event-driven workflows, structured logging, and JWT authentication." },
+  { id: 4, title: "Country Explorer", description: "Interactive country information explorer with advanced search and filtering across capitals, populations, borders, and time zones.", technologies: ["Next.js", "TypeScript", "TailwindCSS", "Framer Motion"], github: "https://github.com/MARVELGARR/restcountries", live: "https://restcountries-delta.vercel.app/", image: "/images/projects/rest country.jpg", difficulty: "Normal", category: "Frontend", status: "Live", impact: "Turns a dense public dataset into a fast, approachable discovery tool.", architecture: "Responsive client interface with API data, search, filtering, and motion-led feedback." },
+  { id: 5, title: "IP Address Tracker", description: "Geolocation tool that tracks IP addresses and displays location data on an interactive map with timezone information.", technologies: ["Next.js", "TailwindCSS", "Leaflet", "GeoIP API"], github: "https://github.com/MARVELGARR/IP-ADDRESS-TRACKER", live: "https://elaborate-frangipane-b3631d.netlify.app/", image: "/images/projects/ip tracker.jpg", difficulty: "Hard", category: "Frontend", status: "Live", impact: "Makes location intelligence legible through a focused map workflow.", architecture: "API-driven search paired with Leaflet rendering and responsive layout states." },
+  { id: 6, title: "Comment Section App", description: "Full-stack comment application with authentication, persistent storage, editing, deletion, and threaded replies.", technologies: ["Next.js", "MongoDB", "Prisma", "Auth.js"], github: "https://github.com/MARVELGARR/commentsection-app", live: "https://commentsection-app-3fhz-fdmtfi9w3-marvelgarr.vercel.app/", image: "/images/projects/active-states.jpg", difficulty: "Hard", category: "Full Stack", status: "Live", impact: "Shows end-to-end ownership of auth, data, and interaction design.", architecture: "Authenticated full-stack flow with Prisma persistence and nested comment relationships." },
 ]
 
 export const experience = [
-  {
-    company: "Foremedia",
-    position: "Frontend Developer",
-    duration: "Oct 2024 – Present",
-    description:
-      "Led custom React video player development, achieving 35% performance improvement and cost savings. Built role-based admin dashboard with content scheduling and analytics. Mentored junior developers on architecture patterns.",
-    achievements: [
-      "35% performance improvement through optimization",
-      "TanStack Query caching reducing 30% network requests",
-      "Role-based admin dashboard with analytics",
-    ],
-  },
-  {
-    company: "Fatherland.io",
-    position: "Full-Stack Developer",
-    duration: "Jan 2024 – Apr 2024",
-    description:
-      "Increased user engagement by 25% building real-time chat with Next.js, Prisma, and MongoDB. Integrated multi-payment gateway system (Stripe, PayPal, Paystack) for secure global transactions. Developed internal CMS reducing administrative overhead by 40%.",
-    achievements: [
-      "25% user engagement increase with real-time features",
-      "Multi-payment gateway integration",
-      "40% admin overhead reduction via CMS",
-    ],
-  },
-  {
-    company: "Transmission Company of Nigeria",
-    position: "Engineering Intern",
-    duration: "Jun 2019 – Dec 2019",
-    description:
-      "Diagnosed and resolved 50+ SCADA network faults, achieving sub-5ms latency and 99% data accuracy in critical infrastructure monitoring systems.",
-    achievements: ["50+ SCADA network faults resolved", "Sub-5ms latency achieved", "99% data accuracy maintained"],
-  },
+  { company: "Foremedia", position: "Frontend Developer", duration: "Oct 2024 – Sept 2025", description: "Built and optimized production web experiences, internal tooling, and content workflows for a media platform.", achievements: ["Built a custom React video player for richer content experiences", "Created a role-based CMS dashboard with content scheduling and analytics", "Used Next.js SSR to improve page delivery and SEO performance", "Added server-side caching for high-traffic API endpoints, improving responsiveness by 35%", "Designed and implemented server-side authentication APIs", "Led the migration from Supabase to PostgreSQL and designed the new relational schema"] },
+  { company: "Fatherland.io", position: "Full-Stack Developer", duration: "Jan 2024 – Apr 2024", description: "Shipped real-time product experiences and secure payment workflows across the stack using Next.js, Node.js, Prisma, and MongoDB.", achievements: ["Increased user engagement by 25% by implementing real-time live chat", "Integrated Stripe, PayPal, and Paystack payment workflows with Node.js", "Built secure checkout flows with flexible transaction options", "Developed a custom content management dashboard that reduced admin overhead by 40%", "Automated content workflows to lower operational costs and streamline publishing", "Collaborated across frontend and backend boundaries to deliver production features"] },
+  { company: "Transmission Company of Nigeria", position: "Engineering Intern", duration: "Jun 2019 – Dec 2019", description: "Supported power-system construction, SCADA operations, network troubleshooting, and protective relay maintenance for critical grid infrastructure.", achievements: ["Assisted with construction of a new power switchyard to increase load handling and grid reliability", "Diagnosed and rectified 50+ network communication equipment faults", "Maintained sub-5ms latency for SCADA monitoring systems", "Improved SCADA data accuracy to 99% while reducing operational downtime", "Inspected and managed protective relay devices for calibration and fault detection", "Reviewed wiring diagrams, tested equipment integrity, and maintained operational logs"] },
 ]
 
-export const about = {
-  intro:
-    "Full-Stack Developer with 2+ years of experience building performant web applications using React, Next.js, TypeScript, and Node.js. Delivered 35% performance improvements and 25% user engagement increases through cross-functional collaboration.",
-  bio: "I'm passionate about creating elegant solutions to complex problems. I specialize in building scalable web applications with a focus on performance, user experience, and clean architecture. My experience spans the entire development stack, from responsive frontends to robust backend systems.",
-  education: "B.Eng. in Information & Communication Technology — Elizade University (Graduated Sept 2021)",
-}
+export const about = { intro: "Full-Stack Developer with 2+ years of experience building performant web applications and measurable product outcomes.", bio: "I'm passionate about creating elegant solutions to complex problems. I specialize in scalable web applications, performance, user experience, and clean architecture across the stack.", education: "B.Eng. in Information & Communication Technology — Elizade University (Graduated Sept 2021)" }
